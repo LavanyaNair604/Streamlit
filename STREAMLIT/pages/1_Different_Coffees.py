@@ -9,7 +9,7 @@ with st.spinner('Please Wait...'):
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("Real.jpg")
+    st.image("pages/Real.jpg")
     st.markdown("#### Dalgona Coffee - ₹160")
     st.write("Instant coffee, sugar , milk and anyway this frothy drink, known as dalgona coffee, might just be your new favourite caffeine kick ")
     st.markdown("#### Iced Macchiato - ₹155")
@@ -33,15 +33,15 @@ with col2:
     st.write("One espresso pod or ground espresso as per requirement, with milk , served hot ")
     st.markdown("#### Latte - ₹169")
     st.write("One espresso pod or ground espresso as per requirement, with milk , served hot in large cup, 300-350ml capacity")
-    st.image("white.jpg")
+    st.image("pages/white.jpg")
     
 col1, col2, col3 = st.columns(3)
 with col1:
     st.link_button("Welcome Page", "Home",type="primary")
 with col2:
-    st.link_button("Yum, Yum food", "2_Different_Snacks",type="primary")
+    st.link_button("Yum, Yum food", "pages/2_Different_Snacks",type="primary")
 with col3:
-    st.link_button("Order here", "3_Order_Items",type="primary")
+    st.link_button("Order here", "pages/3_Order_Items",type="primary")
 
 
 # import time as t
