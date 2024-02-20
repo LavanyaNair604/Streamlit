@@ -21,6 +21,6 @@ with col2:
     st.write("""Try a **cappuccino**, **mocha**, or **latte** first
 Flavored coffee can help you get used to the taste of coffee with sugar, cream, and other flavors""")
     st.link_button("Yummy coffee", "STREAMLIT/pages/1_Different_Coffees.py",type="primary")
-    st.link_button("Yum, Yum food", "STREAMLIT/pages/2_Different_Snacks",type="primary")
-    st.link_button("Order here", "STREAMLIT/pages/3_Order_Items",type="primary")
+    st.link_button("Yum, Yum food", "STREAMLIT/pages/2_Different_Snacks.py",type="primary")
+    st.link_button("Order here", "STREAMLIT/pages/3_Order_Items.py",type="primary")
 
