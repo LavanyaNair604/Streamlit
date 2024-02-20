@@ -19,9 +19,8 @@ with col2:
     st.header(" Coffee and Snacks is a beautiful combination! :cookie:")
     st.write("Coffee is a beverage made from the roasted and ground seeds of the coffee plant. It is one of the most popular beverages in the world, along with water and tea.")
     st.write("""Try a **cappuccino**, **mocha**, or **latte** first
-Flavored coffee can help you get used to the taste of coffee with sugar, cream, and other flavors""")
-    st.page_link("pages/1_Different_Coffees.py", label=":green[Explore coffee here]",icon = "☕")
-    st.link_button("Yummy coffee", "https://github.com/LavanyaNair604/Streamlit/blob/main/STREAMLIT/pages/1_Different_Coffees.py",type="primary")
-    st.link_button("Yum, Yum food", "STREAMLIT/pages/2_Different_Snacks.py",type="primary")
-    st.link_button("Order here", "STREAMLIT/pages/3_Order_Items.py",type="primary")
+    Flavored coffee can help you get used to the taste of coffee with sugar, cream, and other flavors""")
+    st.page_link("pages/1_Different_Coffees.py", label=":green[Explore coffee]",icon = "☕")
+    st.page_link("pages/2_Different_Snacks.py", label=":green[Explore snacks]",icon = "🍩")
+    st.page_link("pages/3_Order_Items.py", label=":green[Order]",icon = "📝")
 

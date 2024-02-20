@@ -30,9 +30,10 @@ with col2:
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.link_button("Welcome Page", "STREAMLIT/Home.py",type="primary") 
+    st.page_link("pages/Home.py", label=":green[Welcome Page]",icon = "🏚️")
+    
 with col2:
-    st.link_button("Yummy coffee", "STREAMLIT/pages/1_Different_Coffees.py",type="primary")
+    st.page_link("pages/1_Different_Coffees.py", label=":green[Explore coffee]",icon = "☕")
 with col3:
-    st.link_button("Order here", "STREAMLIT/pages/3_Order_Items.py",type="primary")
+    st.page_link("pages/3_Order_Items.py", label=":green[Order]",icon = "📝") 
 # st.sidebar.header("You are viewing the _about page_ ")
