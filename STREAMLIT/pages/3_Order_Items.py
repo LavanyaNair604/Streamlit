@@ -38,7 +38,7 @@ def generate_pdf(customer_name, total):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
-    pdf.cell(180, 10, txt=f"{customer_name}'s Receipt",ln=1, align="C")
+    pdf.cell(180, 10, txt=f"{customer_name} Receipt",ln=1, align="C")
     pdf.cell(180, 10, txt=f"{today}",ln=1, align="C")
     # Add details like date, customer name, etc.
     for key, value in cofe.items():
