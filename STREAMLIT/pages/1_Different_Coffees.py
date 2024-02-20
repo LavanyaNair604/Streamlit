@@ -9,7 +9,7 @@ with st.spinner('Please Wait...'):
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("pages/Real.jpg")
+    st.image("STREAMLIT/pages/Real.jpg")
     st.markdown("#### Dalgona Coffee - ₹160")
     st.write("Instant coffee, sugar , milk and anyway this frothy drink, known as dalgona coffee, might just be your new favourite caffeine kick ")
     st.markdown("#### Iced Macchiato - ₹155")
@@ -33,7 +33,7 @@ with col2:
     st.write("One espresso pod or ground espresso as per requirement, with milk , served hot ")
     st.markdown("#### Latte - ₹169")
     st.write("One espresso pod or ground espresso as per requirement, with milk , served hot in large cup, 300-350ml capacity")
-    st.image("pages/white.jpg")
+    st.image("STREAMLIT/pages/white.jpg")
     
 col1, col2, col3 = st.columns(3)
 with col1:
