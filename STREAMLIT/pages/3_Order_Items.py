@@ -50,7 +50,7 @@ def generate_pdf(customer_name, total):
     pdf.cell(50, 10, txt=f"Items",ln=0, align="L")
     pdf.cell(60, 10, txt=f"Item Fare",ln=0, align="C")
     # pdf.cell(40, 10, txt=f"Snacks Fare",ln=0, align="R")
-    pdf.cell(60, 10, txt=f"Total",ln=1, align="R")
+    pdf.cell(0, 10, txt=f"Total",ln=1, align="R")
     pdf.ln()
     # Add details like date, customer name, etc.
     for key, value in cofe.items():
