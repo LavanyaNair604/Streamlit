@@ -32,26 +32,43 @@ total_fares = calculate_total_fare_coffee(selected_item, snak)
 st.write('Snacks Fare:', total_fares)
 today = date.today()
 # st.write(" Coffee and Snacks Fare : ",total)
+from fpdf import FPDF
+pdf = FPDF()
+def title():
+    pdf.set_font('Arial', '', 12)
+    pdf.cell(180, 10, txt="Cheruby Greens Cafe",ln=1, align="C")
 
 def generate_pdf(customer_name, total):
-    from fpdf import FPDF
-    pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    pdf.cell(180, 10, txt=f"{customer_name} Receipt",ln=1, align="C")
-    pdf.cell(180, 10, txt=f"{today}",ln=1, align="C")
+    pdf.set_font_size(12)
+    title()
+    pdf.cell(180, 10, txt="Receipt",ln=1, align="C")
+    pdf.ln()
+    pdf.cell(40, 10, txt=f"Customer Name -  {customer_name}",ln=1, align="C")
+    pdf.cell(40, 10, txt=f"Date - {today}",ln=1, align="C")
+    pdf.ln()
+    pdf.cell(60, 10, txt=f"Items",ln=0, align="C")
+    pdf.cell(30, 10, txt=f"Coffee Fare",ln=0, align="C")
+    pdf.cell(40, 10, txt=f"Snacks Fare",ln=0, align="R")
+    pdf.cell(60, 10, txt=f"Total",ln=1, align="R")
+    pdf.ln()
     # Add details like date, customer name, etc.
     for key, value in cofe.items():
         if key in selected_items:
-            pdf.cell(100, 20, txt=f"{key} ({value})", ln=1)
-    pdf.cell(0, 10, txt=f"Coffee Total: {total_fare:.2f}", ln=1, align="R")
+            pdf.cell(50, 10, txt=f"{key}", ln=0,align="C")
+            pdf.cell(50, 10, txt = f"{value}",align="C",ln=1)
+    pdf.ln()
     # return pdf.output(dest="S").encode("latin-1")
 
     for key, value in snak.items():
         if key in selected_item:
-            pdf.cell(100, 20, txt=f"{key} ({value})", ln=1)
-    pdf.cell(0, 10, txt=f"Snacks Total: {total_fares:.2f}", ln=1, align="R")
-    pdf.cell(190, 30, txt=f"Coffee and Snacks Total: {total:.2f}", ln=1, align="R")
+            pdf.cell(50, 10, txt=f"{key}", ln=0,align="C")
+            pdf.cell(70, 10, txt = f"{value}",align="R",ln=1)
+    pdf.ln()
+    pdf.line(20, 32, 190, 32)
+    pdf.cell(0, 10, txt=f"{total:.2f}", ln=1, align="R")
+    # pdf.cell(0, 10, txt=f"Snacks Total: {total_fares:.2f}", ln=1, align="R")
+    # pdf.cell(190, 30, txt=f"Coffee and Snacks Total: {total:.2f}", ln=1, align="R")
     return pdf.output(dest="S").encode("latin-1")
 
 
@@ -60,7 +77,7 @@ def generate_pdf(customer_name, total):
 def download():
     pdf_data = generate_pdf(customer_name, total)
     b64 = base64.b64encode(pdf_data)
-    progress_text = "Operation in progress. Please wait."
+    progress_text = "Downloading your receipt.... Please wait."
     my_bar = st.progress(0, text=progress_text)
     for percent_complete in range(100):
         time.sleep(0.01)
@@ -80,26 +97,39 @@ if 'clicked' not in st.session_state:
 
 clicked = st.button('Download Receipt')
 
+
 if clicked and (len(selected_items) == 0) and (len(selected_item) > 0):
-    st.session_state.clicked = True
-    st.info('It would be nice if you also tried our coffee!', icon="😋")
-    download()
+    if customer_name is None or customer_name == "":
+        # st.session_state.clicked = True
+        st.error("Enter your name please?")
+    else:
+        st.session_state.clicked = True
+        st.info('Try our coffee next time you order!', icon="😋")
+        download()
 
 elif clicked and (len(selected_items) > 0) and (len(selected_item) > 0):
-    st.session_state.clicked = True
-    download()
-    st.success('Receipt Downloaded successfully!', icon="✅")
-    st.snow()
-
+    if customer_name is None or customer_name == "":
+        # st.session_state.clicked = True
+        st.error("Enter your name please?")
+    else:
+        st.session_state.clicked = True
+        st.success('Receipt Downloaded successfully!', icon="✅")
+        download()
+        st.snow()
+    
 elif clicked and (len(selected_item) == 0) and (len(selected_items) > 0):
-    st.session_state.clicked = True
-    st.info('It would be nice if you also tried our snacks!', icon="😍")
-    download()
+    if customer_name is None or customer_name == "":
+        # st.session_state.clicked = True
+        st.error("Enter your name please?")
+    else:
+        st.session_state.clicked = True
+        st.info('Try some snacks next time you order!', icon="😍")
+        download()
 
 elif clicked and (len(selected_items) == 0) and (len(selected_item) == 0):
-    st.session_state.clicked = True
-    st.info("Only receipt? Choose a snack or a coffee please!",icon = "😞")
-
+        st.session_state.clicked = True
+        st.info("Only receipt? Choose a snack or a coffee please!",icon = "😞")
+    
 else:
     pass
     
