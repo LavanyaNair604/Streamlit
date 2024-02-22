@@ -84,7 +84,7 @@ def download():
         my_bar.progress(percent_complete + 1, text=progress_text)
     time.sleep(1)
     my_bar.empty()
-    html = f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="receipt.pdf">Download Receipt</a>'
+    html = f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="receipt.pdf">View your receipt here</a>'
     st.markdown(html, unsafe_allow_html=True)
 
 customer_name = st.text_input("Customer Name")
@@ -95,7 +95,7 @@ total = total_fare + total_fares
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
 
-clicked = st.button('View your receipt here')
+clicked = st.button('Downloaded')
 
 
 if clicked and (len(selected_items) == 0) and (len(selected_item) > 0):
@@ -105,6 +105,7 @@ if clicked and (len(selected_items) == 0) and (len(selected_item) > 0):
     else:
         st.session_state.clicked = True
         st.info('Try our coffee next time you order!', icon="😋")
+        st.success('Receipt Downloaded successfully!', icon="✅")
         download()
 
 elif clicked and (len(selected_items) > 0) and (len(selected_item) > 0):
@@ -124,6 +125,7 @@ elif clicked and (len(selected_item) == 0) and (len(selected_items) > 0):
     else:
         st.session_state.clicked = True
         st.info('Try some snacks next time you order!', icon="😍")
+        st.success('Receipt Downloaded successfully!', icon="✅")
         download()
 
 elif clicked and (len(selected_items) == 0) and (len(selected_item) == 0):
