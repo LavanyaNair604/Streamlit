@@ -48,22 +48,22 @@ def generate_pdf(customer_name, total):
     pdf.cell(50, 10, txt=f"Date - {today}",ln=1, align="L")
     pdf.ln()
     pdf.cell(50, 10, txt=f"Items",ln=0, align="L")
-    pdf.cell(40, 10, txt=f"Coffee Fare",ln=0, align="C")
-    pdf.cell(40, 10, txt=f"Snacks Fare",ln=0, align="R")
+    pdf.cell(40, 10, txt=f"Item Fare",ln=0, align="C")
+    # pdf.cell(40, 10, txt=f"Snacks Fare",ln=0, align="R")
     pdf.cell(60, 10, txt=f"Total",ln=1, align="R")
     pdf.ln()
     # Add details like date, customer name, etc.
     for key, value in cofe.items():
         if key in selected_items:
-            pdf.cell(50, 10, txt=f"{key}", ln=0,align="L")
+            pdf.cell(50, 10, txt=f"{key}☕", ln=0,align="L")
             pdf.cell(50, 10, txt = f"{value}",align="C",ln=1)
     pdf.ln()
     # return pdf.output(dest="S").encode("latin-1")
 
     for key, value in snak.items():
         if key in selected_item:
-            pdf.cell(50, 10, txt=f"{key}", ln=0,align="L")
-            pdf.cell(70, 10, txt = f"{value}",align="R",ln=1)
+            pdf.cell(50, 10, txt=f"{key}🍩", ln=0,align="L")
+            pdf.cell(50, 10, txt = f"{value}",align="C",ln=1)
     pdf.ln()
     pdf.line(20, 32, 190, 32)
     pdf.cell(0, 10, txt=f"{total:.2f}", ln=1, align="R")
