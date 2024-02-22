@@ -66,7 +66,7 @@ def generate_pdf(customer_name, total):
             pdf.cell(60, 10, txt = f"{value}",align="C",ln=1)
     pdf.ln()
     pdf.line(20, 32, 190, 32)
-    pdf.cell(70, 10, txt=f"{total:.2f}", ln=1, align="C")
+    pdf.cell(70, 10, txt=f"{total:.2f}", ln=1, align="C",border=1)
     # pdf.cell(0, 10, txt=f"Snacks Total: {total_fares:.2f}", ln=1, align="R")
     # pdf.cell(190, 30, txt=f"Coffee and Snacks Total: {total:.2f}", ln=1, align="R")
     return pdf.output(dest="S").encode("latin-1")
