@@ -95,7 +95,7 @@ total = total_fare + total_fares
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
 
-clicked = st.button('Download Receipt')
+clicked = st.button('View your receipt here')
 
 
 if clicked and (len(selected_items) == 0) and (len(selected_item) > 0):
