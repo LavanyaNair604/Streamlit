@@ -134,5 +134,14 @@ elif clicked and (len(selected_items) == 0) and (len(selected_item) == 0):
     
 else:
     pass
-    
+
+col1, col2, col3,col4 = st.columns(4)
+with col1:
+    st.page_link("Home.py", label=":green[Home]",icon = "🏚️")
+with col2:
+    st.page_link("pages/1_Different_Coffees.py", label=":green[Our Coffee collection]",icon = "☕")
+with col3:
+    st.page_link("pages/2_Different_Snacks.py", label=":green[Our snacks collection]",icon = "🍪")
+with col4:
+    st.page_link("pages/4_Talk_with_me.py", label=":green[Your assistant 'Green']",icon = "🤖")   
     

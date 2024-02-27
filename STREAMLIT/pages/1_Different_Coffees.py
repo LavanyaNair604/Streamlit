@@ -35,13 +35,15 @@ with col2:
     st.write("One espresso pod or ground espresso as per requirement, with milk , served hot in large cup, 300-350ml capacity")
     st.image("STREAMLIT/pages/white.jpg")
     
-col1, col2, col3 = st.columns(3)
+col1, col2, col3,col4 = st.columns(4)
 with col1:
-    st.page_link("Home.py", label=":green[Welcome Page]",icon = "🏚️")
+    st.page_link("Home.py", label=":green[Home]",icon = "🏚️")
 with col2:
-    st.page_link("pages/2_Different_Snacks.py", label=":green[Explore snacks]",icon = "🍩")
+    st.page_link("pages/2_Different_Snacks.py", label=":green[Our snacks collection]",icon = "🍩")
 with col3:
-    st.page_link("pages/3_Order_Items.py", label=":green[Order]",icon = "📝") 
+    st.page_link("pages/3_Order_Items.py", label=":green[Order Items]",icon = "📝") 
+with col4:
+    st.page_link("pages/4_Talk_with_me.py", label=":green[Your assistant 'Green']",icon = "🤖")
 
 
 # import time as t

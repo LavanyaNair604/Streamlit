@@ -21,9 +21,10 @@ with col2:
     st.write("Coffee is a beverage made from the roasted and ground seeds of the coffee plant. It is one of the most popular beverages in the world, along with water and tea.")
     st.write("""Try a **cappuccino**, **mocha**, or **latte** first
     Flavored coffee can help you get used to the taste of coffee with sugar, cream, and other flavors""")
-    st.page_link("pages/1_Different_Coffees.py", label=":green[Explore coffee]",icon = "☕")
-    st.page_link("pages/2_Different_Snacks.py", label=":green[Explore snacks]",icon = "🍩")
-    st.page_link("pages/3_Order_Items.py", label=":green[Order]",icon = "📝")
+    st.page_link("pages/1_Different_Coffees.py", label=":green[Our Coffee collection]",icon = "☕")
+    st.page_link("pages/2_Different_Snacks.py", label=":green[Our snacks collection]",icon = "🍪")
+    st.page_link("pages/3_Order_Items.py", label=":green[Order Items]",icon = "📝")
+    st.page_link("pages/4_Talk_with_me.py", label=":green[Your assistant 'Green']",icon = "🤖")
 
 #     openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 

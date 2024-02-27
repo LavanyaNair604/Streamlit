@@ -28,12 +28,14 @@ with col2:
     st.write("""**Yeast** allows the dough to rise, for a dense and chewy texture a high protein flour is necessary. We serve this with some sprinkled brown sugar.""")
     st.image("STREAMLIT/pages/muff.jpg")
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3,col4= st.columns(4)
 with col1:
-    st.page_link("Home.py", label=":green[Welcome Page]",icon = "🏚️")
+    st.page_link("Home.py", label=":green[Home]",icon = "🏚️")
     
 with col2:
-    st.page_link("pages/1_Different_Coffees.py", label=":green[Explore coffee]",icon = "☕")
+    st.page_link("pages/1_Different_Coffees.py", label=":green[Our coffee collection]",icon = "☕")
 with col3:
-    st.page_link("pages/3_Order_Items.py", label=":green[Order]",icon = "📝") 
+    st.page_link("pages/3_Order_Items.py", label=":green[Order Items]",icon = "📝") 
+with col4:
+    st.page_link("pages/4_Talk_with_me.py", label=":green[Your assistant 'Green']",icon = "🤖")
 # st.sidebar.header("You are viewing the _about page_ ")
