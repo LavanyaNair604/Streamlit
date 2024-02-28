@@ -2,6 +2,17 @@ import streamlit as st
 # from langchain.llms import OpenAI
 import time
 st.set_page_config(page_title="Cheruby Greens Cafe",layout="wide",initial_sidebar_state="collapsed")
+
+# Hide streamlit style
+hide_st_style = """
+    <style>
+    #MainMenu {visibility:hidden;}
+    footer {visibility:hidden;}
+    header {visibility:header;}
+    </style>
+    """
+st.markdown(hide_st_style,unsafe_allow_html = True)
+
 st.header("Cheruby Greens Cafe :coffee:", divider="green")
 with st.spinner('Please Wait...'):
     time.sleep(1)
