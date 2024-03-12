@@ -4,6 +4,7 @@ import time
 st.set_page_config(page_title="Cheruby Greens Cafe",layout="wide",initial_sidebar_state="collapsed")
 
 # Hide streamlit style
+# Hide streamlit style
 hide_st_style = """
     <style>
     #MainMenu {visibility:hidden;}
